@@ -1,64 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>uvwind — CSS without the CSS</title>
+  <title>uvwind — Style with classes, no CSS file</title>
+
+  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-brand">
-      <span class="brand-mark">UV</span>
-      <span class="brand-name">wind</span>
+  <!-- ══════════════════════════════════
+       NAV
+  ══════════════════════════════════ -->
+  <nav id="navbar">
+
+    <!-- logo -->
+    <a href="#" class="nav-logo">
+      <span class="logo-mark">UV</span>
+      <span class="logo-name">wind</span>
     </a>
-    <div class="nav-center">
+
+    <!-- page links -->
+    <div class="nav-links">
       <a href="#why">Why</a>
       <a href="#playground">Playground</a>
       <a href="#docs">Docs</a>
-      <a href="allclasses.html" style="color:var(--orange)">All Classes ↗</a>
+      <a href="allclasses.html" class="nav-link-orange">All Classes ↗</a>
     </div>
-    <div class="nav-right">
-      <span class="nav-version">v0.1.0</span>
-      <a href="https://github.com/UV921/UVWIND-1" target="_blank" class="nav-gh">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+
+    <!-- right side actions -->
+    <div class="nav-actions">
+      <span class="version-badge">v0.1.0</span>
+
+      <a href="https://github.com/UV921/UVWIND-1" target="_blank" class="github-link">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
         GitHub
       </a>
-      <button class="nav-theme" id="themeBtn" onclick="toggleTheme()">
-        <svg class="sun-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <svg class="moon-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+
+      <!-- theme toggle — handled in script.js -->
+      <button class="theme-btn" id="theme-btn">
+        <svg class="icon-sun" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="icon-moon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
       </button>
     </div>
+
   </nav>
 
-  <!-- HERO -->
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-noise"></div>
 
-    <!-- Left -->
+    <!-- LEFT — headline, desc, cta, stats -->
     <div class="hero-left">
-      <div class="hero-eyebrow">
-        <span class="eyebrow-dot"></span>
+
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
         Funded by ChaiCode
       </div>
 
-      <h1 class="hero-headline">
-        <span class="line-1">CSS</span>
-        <span class="line-2">without<br/>the CSS.</span>
+      <h1>
+        <span class="h1-orange">CSS</span>
+        <span class="h1-white">without<br/>the CSS.</span>
       </h1>
 
       <p class="hero-desc">
-        uvwind scans your HTML, injects a <code>&lt;style&gt;</code> tag at runtime.
-        No build step. No CSS file ever generated. Just add a class — it works.
+        uvwind reads your HTML classes and injects a <code>&lt;style&gt;</code> tag.
+        No build step. No CSS file. No config needed. Just add a class.
       </p>
 
-      <div class="hero-actions">
-        <a href="#docs" class="cta-primary">Get started →</a>
-        <a href="#playground" class="cta-ghost">Try playground</a>
+      <div class="hero-btns">
+        <a href="#docs" class="btn-primary">Get started →</a>
+        <a href="#playground" class="btn-ghost">Try playground</a>
       </div>
 
       <div class="hero-stats">
@@ -77,300 +101,487 @@
           <span class="stat-label">build steps</span>
         </div>
       </div>
+
     </div>
 
-    <!-- Right — animated code editor -->
+    <!-- RIGHT — fake code editor with typing animation -->
     <div class="hero-right">
       <div class="editor">
-        <div class="editor-titlebar">
+
+        <!-- title bar with mac dots -->
+        <div class="editor-bar">
           <div class="editor-dots">
-            <span class="ed-dot red"></span>
-            <span class="ed-dot yellow"></span>
-            <span class="ed-dot green"></span>
+            <span class="edot edot-red"></span>
+            <span class="edot edot-yellow"></span>
+            <span class="edot edot-green"></span>
           </div>
           <span class="editor-filename">index.html</span>
           <span class="editor-lang">HTML</span>
         </div>
 
+        <!-- code body -->
         <div class="editor-body">
-          <div class="editor-lines" id="editor-lines">
+          <div class="line-numbers">
             <span>1</span><span>2</span><span>3</span>
             <span>4</span><span>5</span><span>6</span>
             <span>7</span><span>8</span><span>9</span>
             <span>10</span><span>11</span><span>12</span>
           </div>
-          <div class="editor-code" id="editor-code">
-            <div class="code-line"><span class="ec-comment">&lt;!-- 1. Add uvwind --&gt;</span></div>
-            <div class="code-line"><span class="ec-tag">&lt;script</span> <span class="ec-attr">src=</span><span class="ec-str">"uvwind.js"</span><span class="ec-tag">&gt;&lt;/script&gt;</span></div>
-            <div class="code-line">&nbsp;</div>
-            <div class="code-line"><span class="ec-comment">&lt;!-- 2. Use classes --&gt;</span></div>
-            <div class="code-line typed-line">
-              <span class="ec-tag">&lt;div</span>
-              <span class="ec-attr"> class=</span><span class="ec-str">"<span id="typed-classes"></span>"</span>
-              <span class="ec-tag">&gt;</span>
+          <div class="code-lines">
+            <div class="cl"><span class="cc">&lt;!-- 1. add uvwind --&gt;</span></div>
+            <div class="cl"><span class="ct">&lt;script</span> <span class="ca">src=</span><span class="cs">"uvwind.js"</span><span class="ct">&gt;&lt;/script&gt;</span></div>
+            <div class="cl">&nbsp;</div>
+            <div class="cl"><span class="cc">&lt;!-- 2. use classes --&gt;</span></div>
+            <!-- typed-line gets highlight + typing animation via JS -->
+            <div class="cl typed-line">
+              <span class="ct">&lt;div</span>
+              <span class="ca"> class=</span><span class="cs">"<span id="typed-text"></span>"</span>
+              <span class="ct">&gt;</span>
             </div>
-            <div class="code-line"><span class="ec-muted">&nbsp;&nbsp;Hello world</span></div>
-            <div class="code-line"><span class="ec-tag">&lt;/div&gt;</span></div>
-            <div class="code-line">&nbsp;</div>
-            <div class="code-line"><span class="ec-comment">&lt;!-- 3. uvwind injects: --&gt;</span></div>
-            <div class="code-line"><span class="ec-tag">&lt;style</span> <span class="ec-attr">id=</span><span class="ec-str">"uvwind"</span><span class="ec-tag">&gt;</span></div>
-            <div class="code-line injected-line" id="injected-css">
-              &nbsp;&nbsp;<span class="ec-prop" id="inject-prop">waiting...</span>
-            </div>
-            <div class="code-line"><span class="ec-tag">&lt;/style&gt;</span></div>
+            <div class="cl"><span class="cm">&nbsp;&nbsp;Hello world</span></div>
+            <div class="cl"><span class="ct">&lt;/div&gt;</span></div>
+            <div class="cl">&nbsp;</div>
+            <div class="cl"><span class="cc">&lt;!-- 3. uvwind injects: --&gt;</span></div>
+            <div class="cl"><span class="ct">&lt;style</span> <span class="ca">id=</span><span class="cs">"uvwind"</span><span class="ct">&gt;</span></div>
+            <div class="cl injected-line"><span class="cp" id="injected-text">waiting...</span></div>
+            <div class="cl"><span class="ct">&lt;/style&gt;</span></div>
           </div>
         </div>
 
-        <!-- live preview strip -->
+        <!-- preview strip at bottom of editor -->
         <div class="editor-preview">
           <span class="preview-label">LIVE PREVIEW</span>
-          <div class="preview-box" id="preview-box">Hello world</div>
+          <div id="preview-el">Hello world</div>
         </div>
+
       </div>
     </div>
+
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee">
-      <span>no CSS file</span><span class="dot">·</span>
-      <span>DOM injection</span><span class="dot">·</span>
-      <span>4kb gzipped</span><span class="dot">·</span>
-      <span>VS Code IntelliSense</span><span class="dot">·</span>
-      <span>zero build step</span><span class="dot">·</span>
-      <span>hover states</span><span class="dot">·</span>
-      <span>glass effect</span><span class="dot">·</span>
-      <span>npm + CDN</span><span class="dot">·</span>
-      <span>no CSS file</span><span class="dot">·</span>
-      <span>DOM injection</span><span class="dot">·</span>
-      <span>4kb gzipped</span><span class="dot">·</span>
-      <span>VS Code IntelliSense</span><span class="dot">·</span>
-      <span>zero build step</span><span class="dot">·</span>
-      <span>hover states</span><span class="dot">·</span>
-      <span>glass effect</span><span class="dot">·</span>
-      <span>npm + CDN</span><span class="dot">·</span>
+  <!-- ══════════════════════════════════
+       MARQUEE TICKER
+  ══════════════════════════════════ -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>no CSS file</span><span class="sep">·</span>
+      <span>styleMap approach</span><span class="sep">·</span>
+      <span>DOM injection</span><span class="sep">·</span>
+      <span>VS Code IntelliSense</span><span class="sep">·</span>
+      <span>zero build step</span><span class="sep">·</span>
+      <span>glass effect included</span><span class="sep">·</span>
+      <span>npm + CDN</span><span class="sep">·</span>
+      <span>13 color families</span><span class="sep">·</span>
+      <!-- duplicate for seamless loop -->
+      <span>no CSS file</span><span class="sep">·</span>
+      <span>styleMap approach</span><span class="sep">·</span>
+      <span>DOM injection</span><span class="sep">·</span>
+      <span>VS Code IntelliSense</span><span class="sep">·</span>
+      <span>zero build step</span><span class="sep">·</span>
+      <span>glass effect included</span><span class="sep">·</span>
+      <span>npm + CDN</span><span class="sep">·</span>
+      <span>13 color families</span><span class="sep">·</span>
     </div>
   </div>
 
-  <!-- WHY -->
-  <section class="why-section" id="why">
+  <!-- ══════════════════════════════════
+       WHY SECTION
+  ══════════════════════════════════ -->
+  <section class="why" id="why">
     <div class="container">
-      <div class="section-label">// why uvwind</div>
-      <h2 class="section-title">Built different.<br/>Works everywhere.</h2>
+
+      <p class="section-tag">// why uvwind</p>
+      <h2 class="section-title">How it actually works.</h2>
 
       <div class="why-grid">
         <div class="why-card">
-          <div class="why-number">01</div>
-          <h3>No CSS file. Ever.</h3>
-          <p>Tailwind generates a .css file at build time. uvwind injects a &lt;style&gt; tag at runtime. Open DevTools — no stylesheet. Just inline JS magic.</p>
+          <span class="why-num">01</span>
+          <h3>styleMap approach</h3>
+          <p>Every class maps to one CSS property in a plain JS object. Simple. You can add your own classes in seconds.</p>
         </div>
         <div class="why-card">
-          <div class="why-number">02</div>
-          <h3>Single DOM scan.</h3>
-          <p>On load, uvwind scans your entire DOM once, collects every class used, builds the CSS string, injects it. 500 classes = 1 scan. Not 500.</p>
+          <span class="why-num">02</span>
+          <h3>One DOM scan on load</h3>
+          <p>Scans your page once, collects every class used, builds one CSS string, injects one style tag. Done.</p>
         </div>
         <div class="why-card">
-          <div class="why-number">03</div>
-          <h3>Works with React, Vue, vanilla.</h3>
-          <p>MutationObserver watches for dynamic class changes. Add a class via JS after load — uvwind catches it and styles it instantly.</p>
+          <span class="why-num">03</span>
+          <h3>No stylesheet. Ever.</h3>
+          <p>Open DevTools. See the style tag in head with your classes. No external CSS file linked anywhere.</p>
         </div>
         <div class="why-card">
-          <div class="why-number">04</div>
-          <h3>Glass effect built in.</h3>
-          <p>bg-glass, bg-glass-dark, bg-glass-chai. Glassmorphism with one class. No Tailwind plugin needed. Unique to uvwind.</p>
+          <span class="why-num">04</span>
+          <h3>Glass effect included</h3>
+          <p>bg-glass, bg-glass-dark, bg-glass-chai. Glassmorphism with one class. Not in Tailwind by default.</p>
         </div>
       </div>
 
-      <!-- diff table -->
-      <div class="diff-table">
-        <div class="diff-header">
+      <!-- honest comparison — not hiding weaknesses -->
+      <div class="compare-table">
+        <div class="compare-head">
           <span>Feature</span>
-          <span class="col-uv">uvwind</span>
-          <span class="col-tw">Tailwind</span>
+          <span>uvwind</span>
+          <span>Tailwind</span>
         </div>
-        <div class="diff-row">
-          <span>CSS file generated</span>
-          <span class="col-uv bad">No ✓</span>
-          <span class="col-tw bad2">Yes ✗</span>
+        <div class="compare-row">
+          <span>Generates a CSS file</span>
+          <span class="good">No ✓</span>
+          <span class="neutral">Yes</span>
         </div>
-        <div class="diff-row">
-          <span>Build step required</span>
-          <span class="col-uv bad">No ✓</span>
-          <span class="col-tw bad2">Yes ✗</span>
+        <div class="compare-row">
+          <span>Needs a build step</span>
+          <span class="good">No ✓</span>
+          <span class="neutral">Yes</span>
         </div>
-        <div class="diff-row">
-          <span>Works in plain HTML</span>
-          <span class="col-uv bad">Yes ✓</span>
-          <span class="col-tw bad2">Limited ✗</span>
+        <div class="compare-row">
+          <span>Works in plain HTML file</span>
+          <span class="good">Yes ✓</span>
+          <span class="neutral">Limited</span>
         </div>
-        <div class="diff-row">
-          <span>Dynamic class support</span>
-          <span class="col-uv bad">Yes ✓</span>
-          <span class="col-tw bad2">No ✗</span>
-        </div>
-        <div class="diff-row">
+        <div class="compare-row">
           <span>Glass effect built in</span>
-          <span class="col-uv bad">Yes ✓</span>
-          <span class="col-tw bad2">No ✗</span>
+          <span class="good">Yes ✓</span>
+          <span class="neutral">No</span>
         </div>
-        <div class="diff-row">
-          <span>VS Code IntelliSense</span>
-          <span class="col-uv bad">Yes ✓</span>
-          <span class="col-tw bad2">Plugin ✗</span>
+        <div class="compare-row">
+          <span>Infinite arbitrary values</span>
+          <span class="neutral">No</span>
+          <span class="good">Yes ✓</span>
+        </div>
+        <div class="compare-row">
+          <span>Large app performance</span>
+          <span class="neutral">Good</span>
+          <span class="good">Better ✓</span>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- PLAYGROUND -->
-  <section class="pg-section" id="playground">
+  <!-- ══════════════════════════════════
+       PLAYGROUND
+  ══════════════════════════════════ -->
+  <section class="playground" id="playground">
     <div class="container">
-      <div class="section-label">// interactive playground</div>
-      <h2 class="section-title">Try it. Break it. Ship it.</h2>
-      <p class="section-sub">Type classes. Watch the style tag get injected. Open DevTools to verify — no CSS file, just a &lt;style&gt; tag in &lt;head&gt;.</p>
+
+      <p class="section-tag">// try it live</p>
+      <h2 class="section-title">Type a class. See it inject.</h2>
+      <p class="section-sub">Open DevTools → Elements → head — watch the style tag appear.</p>
 
       <div class="pg-layout">
-        <div class="pg-controls">
+
+        <!-- input + chips + proof -->
+        <div class="pg-left">
           <input
-            id="pg-input"
             type="text"
-            placeholder="bg-red-5 p-4 rounded-lg text-white font-bold"
-            oninput="runPG()"
+            id="pg-input"
+            placeholder="bg-red-5 p4 b-lg t-white"
             autocomplete="off"
             spellcheck="false"
           />
 
-          <div class="pg-chip-groups">
-            <div class="chip-group-label">Colors</div>
+          <!-- chips — JS attaches click events in script.js -->
+          <div class="chip-groups">
+
             <div class="chip-group">
-              <span onclick="chip(this)">bg-red-5</span>
-              <span onclick="chip(this)">bg-blue-5</span>
-              <span onclick="chip(this)">bg-green-5</span>
-              <span onclick="chip(this)">bg-orange-5</span>
-              <span onclick="chip(this)">bg-purple-5</span>
+              <span class="chip-label">Colors</span>
+              <div class="chip-row">
+                <span class="chip" data-class="bg-red-5">bg-red-5</span>
+                <span class="chip" data-class="bg-blue-5">bg-blue-5</span>
+                <span class="chip" data-class="bg-green-5">bg-green-5</span>
+                <span class="chip" data-class="bg-orange-6">bg-orange-6</span>
+                <span class="chip" data-class="bg-purple-5">bg-purple-5</span>
+              </div>
             </div>
-            <div class="chip-group-label">Spacing</div>
+
             <div class="chip-group">
-              <span onclick="chip(this)">p-2</span>
-              <span onclick="chip(this)">p-4</span>
-              <span onclick="chip(this)">p-8</span>
+              <span class="chip-label">Spacing</span>
+              <div class="chip-row">
+                <span class="chip" data-class="p2">p2</span>
+                <span class="chip" data-class="p4">p4</span>
+                <span class="chip" data-class="p6">p6</span>
+              </div>
             </div>
-            <div class="chip-group-label">Effects</div>
+
             <div class="chip-group">
-              <span onclick="chip(this)">bg-glass</span>
-              <span onclick="chip(this)">bg-glass-dark</span>
-              <span onclick="chip(this)">rounded-lg</span>
-              <span onclick="chip(this)">rounded-full</span>
-              <span onclick="chip(this)">shadow-lg</span>
-              <span onclick="chip(this)">font-bold</span>
-              <span onclick="chip(this)">text-white</span>
-              <span onclick="chip(this)">uppercase</span>
+              <span class="chip-label">Effects</span>
+              <div class="chip-row">
+                <span class="chip" data-class="bg-glass">bg-glass</span>
+                <span class="chip" data-class="b-lg">b-lg</span>
+                <span class="chip" data-class="b-circle">b-circle</span>
+                <span class="chip" data-class="t-white">t-white</span>
+              </div>
             </div>
+
           </div>
 
+          <!-- shows what gets injected -->
           <div class="pg-proof">
-            <div class="proof-label">injected &lt;style&gt; tag:</div>
-            <code id="pg-injected">// apply classes to see injection</code>
+            <span class="proof-label">injected &lt;style&gt; tag:</span>
+            <code id="pg-output">// type a class above</code>
           </div>
         </div>
 
-        <div class="pg-preview">
-          <div class="pg-canvas">
-            <div class="pg-orb pg-o1"></div>
-            <div class="pg-orb pg-o2"></div>
-            <div class="pg-orb pg-o3"></div>
+        <!-- preview box + simulated devtools -->
+        <div class="pg-right">
+
+          <div class="pg-scene">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
             <div id="pg-box">uvwind box</div>
           </div>
-          <div class="pg-devtools">
-            <div class="dt-bar">
+
+          <div class="devtools-panel">
+            <div class="dt-titlebar">
               <span class="dt-dot"></span>
               <span class="dt-dot"></span>
               <span class="dt-dot"></span>
-              <span class="dt-title">DevTools — Elements</span>
+              <span class="dt-name">DevTools — Elements</span>
             </div>
             <div class="dt-body">
-              <div class="dt-line">
-                <span class="dt-tag">&lt;head&gt;</span>
-              </div>
-              <div class="dt-line indent">
+              <div class="dt-line"><span class="dt-tag">&lt;head&gt;</span></div>
+              <div class="dt-line dt-indent">
                 <span class="dt-tag">&lt;style</span>
                 <span class="dt-attr"> id=</span>
                 <span class="dt-str">"uvwind"</span>
                 <span class="dt-tag">&gt;</span>
               </div>
-              <div class="dt-line indent2" id="dt-css">
+              <div class="dt-line dt-indent2" id="dt-content">
                 <span class="dt-muted">// empty</span>
               </div>
-              <div class="dt-line indent">
-                <span class="dt-tag">&lt;/style&gt;</span>
-              </div>
-              <div class="dt-line">
-                <span class="dt-tag">&lt;/head&gt;</span>
-              </div>
+              <div class="dt-line dt-indent"><span class="dt-tag">&lt;/style&gt;</span></div>
+              <div class="dt-line"><span class="dt-tag">&lt;/head&gt;</span></div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COLOR GRID -->
+  <!-- ══════════════════════════════════
+       COLORS
+  ══════════════════════════════════ -->
   <section class="colors-section" id="colors">
     <div class="container">
-      <div class="section-label">// color palette</div>
-      <h2 class="section-title">13 color families.<br/>10 shades each. 130 classes.</h2>
-      <p class="section-sub">Click any swatch to copy the hex value. Every shade maps to a single class.</p>
-      <div id="color-grid" class="color-grid"></div>
+      <p class="section-tag">// color palette</p>
+      <h2 class="section-title">Every color. Ready to use.</h2>
+      <p class="section-sub">10 shades per color. Light to dark. Just add the class.</p>
+
+      <div class="color-grid">
+
+        <div class="color-row">
+          <span class="color-name">red</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#fff1f2" title="bg-red-1"></div>
+            <div class="swatch" style="background:#fecdd3" title="bg-red-2"></div>
+            <div class="swatch" style="background:#fda4af" title="bg-red-3"></div>
+            <div class="swatch" style="background:#fb7185" title="bg-red-4"></div>
+            <div class="swatch" style="background:#f43f5e" title="bg-red-5"></div>
+            <div class="swatch" style="background:#e11d48" title="bg-red-6"></div>
+            <div class="swatch" style="background:#be123c" title="bg-red-7"></div>
+            <div class="swatch" style="background:#9f1239" title="bg-red-8"></div>
+            <div class="swatch" style="background:#881337" title="bg-red-9"></div>
+            <div class="swatch" style="background:#4c0519" title="bg-red-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">orange</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#fff7ed" title="bg-orange-1"></div>
+            <div class="swatch" style="background:#ffedd5" title="bg-orange-2"></div>
+            <div class="swatch" style="background:#fed7aa" title="bg-orange-3"></div>
+            <div class="swatch" style="background:#fdba74" title="bg-orange-4"></div>
+            <div class="swatch" style="background:#fb923c" title="bg-orange-5"></div>
+            <div class="swatch" style="background:#f97316" title="bg-orange-6"></div>
+            <div class="swatch" style="background:#ea580c" title="bg-orange-7"></div>
+            <div class="swatch" style="background:#c2410c" title="bg-orange-8"></div>
+            <div class="swatch" style="background:#9a3412" title="bg-orange-9"></div>
+            <div class="swatch" style="background:#431407" title="bg-orange-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">yellow</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#fefce8" title="bg-yellow-1"></div>
+            <div class="swatch" style="background:#fef9c3" title="bg-yellow-2"></div>
+            <div class="swatch" style="background:#fef08a" title="bg-yellow-3"></div>
+            <div class="swatch" style="background:#fde047" title="bg-yellow-4"></div>
+            <div class="swatch" style="background:#eab308" title="bg-yellow-5"></div>
+            <div class="swatch" style="background:#ca8a04" title="bg-yellow-6"></div>
+            <div class="swatch" style="background:#a16207" title="bg-yellow-7"></div>
+            <div class="swatch" style="background:#854d0e" title="bg-yellow-8"></div>
+            <div class="swatch" style="background:#713f12" title="bg-yellow-9"></div>
+            <div class="swatch" style="background:#422006" title="bg-yellow-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">green</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#f0fdf4" title="bg-green-1"></div>
+            <div class="swatch" style="background:#bbf7d0" title="bg-green-2"></div>
+            <div class="swatch" style="background:#86efac" title="bg-green-3"></div>
+            <div class="swatch" style="background:#4ade80" title="bg-green-4"></div>
+            <div class="swatch" style="background:#22c55e" title="bg-green-5"></div>
+            <div class="swatch" style="background:#16a34a" title="bg-green-6"></div>
+            <div class="swatch" style="background:#15803d" title="bg-green-7"></div>
+            <div class="swatch" style="background:#166534" title="bg-green-8"></div>
+            <div class="swatch" style="background:#14532d" title="bg-green-9"></div>
+            <div class="swatch" style="background:#052e16" title="bg-green-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">blue</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#eff6ff" title="bg-blue-1"></div>
+            <div class="swatch" style="background:#bfdbfe" title="bg-blue-2"></div>
+            <div class="swatch" style="background:#93c5fd" title="bg-blue-3"></div>
+            <div class="swatch" style="background:#60a5fa" title="bg-blue-4"></div>
+            <div class="swatch" style="background:#3b82f6" title="bg-blue-5"></div>
+            <div class="swatch" style="background:#2563eb" title="bg-blue-6"></div>
+            <div class="swatch" style="background:#1d4ed8" title="bg-blue-7"></div>
+            <div class="swatch" style="background:#1e40af" title="bg-blue-8"></div>
+            <div class="swatch" style="background:#1e3a8a" title="bg-blue-9"></div>
+            <div class="swatch" style="background:#172554" title="bg-blue-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">purple</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#faf5ff" title="bg-purple-1"></div>
+            <div class="swatch" style="background:#f3e8ff" title="bg-purple-2"></div>
+            <div class="swatch" style="background:#e9d5ff" title="bg-purple-3"></div>
+            <div class="swatch" style="background:#d8b4fe" title="bg-purple-4"></div>
+            <div class="swatch" style="background:#a855f7" title="bg-purple-5"></div>
+            <div class="swatch" style="background:#9333ea" title="bg-purple-6"></div>
+            <div class="swatch" style="background:#7e22ce" title="bg-purple-7"></div>
+            <div class="swatch" style="background:#6b21a8" title="bg-purple-8"></div>
+            <div class="swatch" style="background:#581c87" title="bg-purple-9"></div>
+            <div class="swatch" style="background:#3b0764" title="bg-purple-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">pink</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#fdf2f8" title="bg-pink-1"></div>
+            <div class="swatch" style="background:#fce7f3" title="bg-pink-2"></div>
+            <div class="swatch" style="background:#fbcfe8" title="bg-pink-3"></div>
+            <div class="swatch" style="background:#f9a8d4" title="bg-pink-4"></div>
+            <div class="swatch" style="background:#f472b6" title="bg-pink-5"></div>
+            <div class="swatch" style="background:#ec4899" title="bg-pink-6"></div>
+            <div class="swatch" style="background:#db2777" title="bg-pink-7"></div>
+            <div class="swatch" style="background:#be185d" title="bg-pink-8"></div>
+            <div class="swatch" style="background:#9d174d" title="bg-pink-9"></div>
+            <div class="swatch" style="background:#500724" title="bg-pink-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">gray</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#f9fafb" title="bg-gray-1"></div>
+            <div class="swatch" style="background:#f3f4f6" title="bg-gray-2"></div>
+            <div class="swatch" style="background:#e5e7eb" title="bg-gray-3"></div>
+            <div class="swatch" style="background:#d1d5db" title="bg-gray-4"></div>
+            <div class="swatch" style="background:#9ca3af" title="bg-gray-5"></div>
+            <div class="swatch" style="background:#6b7280" title="bg-gray-6"></div>
+            <div class="swatch" style="background:#4b5563" title="bg-gray-7"></div>
+            <div class="swatch" style="background:#374151" title="bg-gray-8"></div>
+            <div class="swatch" style="background:#1f2937" title="bg-gray-9"></div>
+            <div class="swatch" style="background:#111827" title="bg-gray-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name">brown</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#fdf8f0" title="bg-brown-1"></div>
+            <div class="swatch" style="background:#f5e6d3" title="bg-brown-2"></div>
+            <div class="swatch" style="background:#e8c9a0" title="bg-brown-3"></div>
+            <div class="swatch" style="background:#d4a574" title="bg-brown-4"></div>
+            <div class="swatch" style="background:#b8864e" title="bg-brown-5"></div>
+            <div class="swatch" style="background:#9a6b3c" title="bg-brown-6"></div>
+            <div class="swatch" style="background:#7d5230" title="bg-brown-7"></div>
+            <div class="swatch" style="background:#623d22" title="bg-brown-8"></div>
+            <div class="swatch" style="background:#4a2c16" title="bg-brown-9"></div>
+            <div class="swatch" style="background:#2c1a0e" title="bg-brown-10"></div>
+          </div>
+        </div>
+
+        <div class="color-row">
+          <span class="color-name chai-row">chai ✦</span>
+          <div class="swatches">
+            <div class="swatch" style="background:#fff7ed" title="bg-chai-light"></div>
+            <div class="swatch swatch-lg" style="background:#f97316" title="bg-chai"></div>
+            <div class="swatch" style="background:#7c2d12" title="bg-chai-dark"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- copy tooltip -->
+      <p class="color-hint">hover a swatch to see class name · click to copy</p>
+
     </div>
   </section>
 
-  <!-- DOCS -->
-  <section class="docs-section" id="docs">
+  <!-- ══════════════════════════════════
+       DOCS
+  ══════════════════════════════════ -->
+  <section class="docs" id="docs">
     <div class="container">
-      <div class="section-label">// get started</div>
+
+      <p class="section-tag">// get started</p>
       <h2 class="section-title">Ship in 30 seconds.</h2>
 
-      <div class="install-row">
-        <button class="install-tab active" id="t-cdn" onclick="tab('cdn')">CDN</button>
-        <button class="install-tab" id="t-npm" onclick="tab('npm')">NPM</button>
+      <!-- tab buttons — JS handles switching in script.js -->
+      <div class="tab-row">
+        <button class="tab active" data-tab="cdn">CDN</button>
+        <button class="tab" data-tab="npm">NPM</button>
       </div>
 
-      <div class="code-block" id="b-cdn">
-        <div class="cb-header">
+      <div class="code-block" id="block-cdn">
+        <div class="cb-head">
           <span>index.html</span>
-          <button onclick="copy('c-cdn')">Copy</button>
+          <button class="copy-btn" data-target="code-cdn">Copy</button>
         </div>
-        <pre id="c-cdn"><span class="ec-comment">&lt;!-- drop in &lt;head&gt;, nothing else needed --&gt;</span>
-<span class="ec-tag">&lt;script</span> <span class="ec-attr">src=</span><span class="ec-str">"https://cdn.jsdelivr.net/gh/uvesh/uvwind/uvwind.min.js"</span><span class="ec-tag">&gt;&lt;/script&gt;</span>
+        <pre id="code-cdn"><span class="cc">&lt;!-- drop in &lt;head&gt; --&gt;</span>
+<span class="ct">&lt;script</span> <span class="ca">src=</span><span class="cs">"https://cdn.jsdelivr.net/gh/UV921/UVWIND-1/main.js"</span><span class="ct">&gt;&lt;/script&gt;</span>
 
-<span class="ec-comment">&lt;!-- use classes anywhere --&gt;</span>
-<span class="ec-tag">&lt;div</span> <span class="ec-attr">class=</span><span class="ec-str">"bg-red-5 p-4 rounded-lg text-white"</span><span class="ec-tag">&gt;</span>
+<span class="cc">&lt;!-- use classes anywhere --&gt;</span>
+<span class="ct">&lt;div</span> <span class="ca">class=</span><span class="cs">"bg-red-5 p4 b-lg t-white"</span><span class="ct">&gt;</span>
   Hello uvwind
-<span class="ec-tag">&lt;/div&gt;</span></pre>
+<span class="ct">&lt;/div&gt;</span></pre>
       </div>
 
-      <div class="code-block hidden" id="b-npm">
-        <div class="cb-header">
+      <div class="code-block hidden" id="block-npm">
+        <div class="cb-head">
           <span>terminal</span>
-          <button onclick="copy('c-npm')">Copy</button>
+          <button class="copy-btn" data-target="code-npm">Copy</button>
         </div>
-        <pre id="c-npm"><span class="ec-comment"># install</span>
+        <pre id="code-npm"><span class="cc"># coming soon</span>
 npm install uvwind
 
-<span class="ec-comment"># import — auto runs, no config</span>
-<span class="ec-tag">import</span> <span class="ec-str">'uvwind'</span></pre>
+<span class="ct">import</span> <span class="cs">'uvwind'</span></pre>
       </div>
 
-      <!-- class reference -->
+      <!-- class reference cards -->
       <div class="ref-grid">
         <div class="ref-card">
           <div class="ref-head">Spacing</div>
           <div class="ref-rows">
-            <div class="ref-row"><code>p-1</code><span>padding: 4px</span></div>
-            <div class="ref-row"><code>p-2</code><span>padding: 8px</span></div>
-            <div class="ref-row"><code>p-4</code><span>padding: 16px</span></div>
-            <div class="ref-row"><code>p-8</code><span>padding: 32px</span></div>
-            <div class="ref-row"><code>m-4</code><span>margin: 16px</span></div>
+            <div class="ref-row"><code>p1</code><span>padding: 4px</span></div>
+            <div class="ref-row"><code>p2</code><span>padding: 8px</span></div>
+            <div class="ref-row"><code>p4</code><span>padding: 20px</span></div>
+            <div class="ref-row"><code>p6</code><span>padding: 28px</span></div>
+            <div class="ref-row"><code>m4</code><span>margin: 20px</span></div>
           </div>
         </div>
         <div class="ref-card">
@@ -379,51 +590,56 @@ npm install uvwind
             <div class="ref-row"><code>bg-red-5</code><span style="color:#f43f5e">■</span></div>
             <div class="ref-row"><code>bg-blue-5</code><span style="color:#3b82f6">■</span></div>
             <div class="ref-row"><code>bg-green-5</code><span style="color:#22c55e">■</span></div>
-            <div class="ref-row"><code>bg-orange-5</code><span style="color:#f97316">■</span></div>
-            <div class="ref-row"><code>bg-*-1 to 10</code><span>10 shades each</span></div>
+            <div class="ref-row"><code>bg-orange-6</code><span style="color:#f97316">■</span></div>
+            <div class="ref-row"><code>bg-*-1 to 10</code><span>10 shades</span></div>
           </div>
         </div>
         <div class="ref-card">
-          <div class="ref-head">Typography</div>
+          <div class="ref-head">Text</div>
           <div class="ref-rows">
-            <div class="ref-row"><code>text-white</code><span>color: #fff</span></div>
-            <div class="ref-row"><code>font-bold</code><span>weight: 700</span></div>
-            <div class="ref-row"><code>text-xl</code><span>size: 1.25rem</span></div>
-            <div class="ref-row"><code>uppercase</code><span>transform: upper</span></div>
-            <div class="ref-row"><code>italic</code><span>style: italic</span></div>
+            <div class="ref-row"><code>t-white</code><span>color: #fff</span></div>
+            <div class="ref-row"><code>t-chai</code><span>color: #f97316</span></div>
+            <div class="ref-row"><code>t-center</code><span>text-align: center</span></div>
+            <div class="ref-row"><code>t-muted</code><span>color: #6b7280</span></div>
+            <div class="ref-row"><code>t-gray-1 to 10</code><span>10 shades</span></div>
           </div>
         </div>
-        <div class="ref-card ref-highlight">
+        <div class="ref-card ref-special">
           <div class="ref-head">Glass ✦</div>
           <div class="ref-rows">
             <div class="ref-row"><code>bg-glass</code><span>frosted light</span></div>
             <div class="ref-row"><code>bg-glass-dark</code><span>frosted dark</span></div>
             <div class="ref-row"><code>bg-glass-lg</code><span>heavy blur</span></div>
             <div class="ref-row"><code>bg-glass-chai</code><span>orange tint</span></div>
-            <div class="ref-row more">unique to uvwind</div>
+            <div class="ref-row special-note">unique to uvwind</div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark">UV</span>
-        <span class="brand-name">wind</span>
-        <span class="footer-tag">CSS without the CSS.</span>
+    <div class="container footer-row">
+      <div class="footer-logo">
+        <span class="logo-mark">UV</span>
+        <span class="logo-name">wind</span>
+        <span class="footer-sub">Style with classes. No CSS file.</span>
       </div>
       <div class="footer-links">
-        <span class="version-pill">v0.1.0</span>
-        <a href="https://github.com" target="_blank">GitHub</a>
+        <span class="version-badge">v0.1.0</span>
+        <a href="https://github.com/UV921/UVWIND-1" target="_blank">GitHub</a>
         <a href="#docs">Docs</a>
+        <a href="allclasses.html">All Classes</a>
       </div>
-      <div class="footer-credit">Made by Uvesh 🍵 at ChaiCode</div>
+      <span class="footer-credit">Made by Uvesh 🍵 at ChaiCode</span>
     </div>
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
