@@ -373,9 +373,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 // copy buttons
 document.querySelectorAll('.copy-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    const targetId = btn.getAttribute('data-target')
-    const text     = document.getElementById(targetId).innerText
-
+    const text = document.getElementById(btn.getAttribute('data-target')).innerText
     navigator.clipboard.writeText(text).then(() => {
       const original = btn.textContent
       btn.textContent = 'Copied!'

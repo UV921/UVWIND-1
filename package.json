@@ -1,0 +1,15 @@
+{
+  "name": "uvwind",
+  "version": "0.1.0",
+  "description": "CSS utility classes via DOM injection. No CSS file ever.",
+  "main": "src/engine.js",
+  "keywords": ["css", "utility", "tailwind", "dom", "no-build"],
+  "author": "Uvesh Tyagi",
+  "license": "MIT",
+  "files": ["src/"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UV921/UVWIND-1.git"
+  },
+  "homepage": "https://uvwind.vercel.app"
+}
